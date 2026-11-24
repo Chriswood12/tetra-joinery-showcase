@@ -46,8 +46,8 @@ export const PROJECT = {
   story: {
     eyebrow: '01 · The Piece',
     heading: 'Architecture in motion, built by hand.',
-    lead: 'Originally conceived by French engineer and designer Bernard Vuarnesson for Sculptures Jeux, Tetra rejects the stillness of the conventional coffee table. Beneath its checkered solid-wood grating lie four independent, reversible shelves that glide outward on all-wood runners—doubling the footprint in a single gesture.',
-    body: 'As our joinery school capstone study, we set out to reproduce Tetra’s exact geometric harmony while honoring traditional cabinetmaking discipline: zero metal drawer slides, tight hand-fitted tolerances, reclaimed hardwood stock, and surfaces finished solely in cold-pressed natural oils.',
+    lead: 'Inspired by French engineer and designer Bernard Vuarnesson’s iconic Tetra for Sculptures Jeux, this low table rejects the stillness of conventional furniture. Beneath its calm, flush solid-wood tabletop lie four independent, reversible shelves that glide outward on all-wood runners—doubling the footprint in a single gesture.',
+    body: 'As our joinery school project, we adapted Tetra’s architectural proportions with a clean solid hardwood tabletop and traditional cabinetmaking discipline: zero metal drawer slides, tight hand-fitted tolerances, reclaimed hardwood stock, and surfaces finished solely in cold-pressed natural oils.',
     plates: [
       {
         id: 'plate-closed',
@@ -57,12 +57,12 @@ export const PROJECT = {
         title: 'The Compact Cube',
         meta: '585 × 585 × 310 MM · CLOSED STATE',
         caption:
-          'When closed, the four stacked trays disappear cleanly inside the mitered corner posts, leaving a calm square aperture grid over the top inlay.',
+          'When closed, the four stacked trays disappear cleanly beneath the continuous solid-wood top and between the corner posts, forming a quiet, monolithic square.',
         // Drop your photo in public/images/ and set src: './images/tetra-closed.jpg'
         src: '',
         expectedFile: 'public/images/tetra-closed.jpg',
         placeholderTitle: 'Closed Cube Study',
-        alt: 'Tetra coffee table closed into a 58.5 cm square solid wood cube showing the checkered lattice top',
+        alt: 'Tetra coffee table closed into a 58.5 cm square solid wood cube with flush solid wood tabletop',
       },
       {
         id: 'plate-tray',
@@ -199,9 +199,9 @@ export const PROJECT = {
       {
         index: '02',
         principle: 'Reuse',
-        title: 'Offcuts elevated to ornament',
+        title: 'Reclaimed stock, zero waste',
         description:
-          'The signature slatted lattice is milled entirely from narrow workshop hardwood offcuts too short for conventional panels—turning cabinetmaking remnants into the table’s centerpiece.',
+          'Narrow hardwood workshop offcuts are grain-matched and edge-glued into a calm, continuous solid tabletop—turning short cabinetmaking remnants into an heirloom surface.',
       },
       {
         index: '03',
@@ -218,15 +218,15 @@ export const PROJECT = {
       aspect: '4:3',
       plateCode: 'PLATE 04',
       placeholderTitle: 'Workbench & Joinery Study',
-      alt: 'Joinery workbench assembly of half-lap battens and hand tools',
-      caption: 'FIG. 04 — HALF-LAP LATTICE DRY FIT · RECLAIMED WORKSHOP OFFCUTS',
+      alt: 'Joinery workbench assembly of the solid wood tabletop and hand tools',
+      caption: 'FIG. 04 — SOLID TOP STAVE MATCHING & HAND PLANING · RECLAIMED WORKSHOP STOCK',
     },
     ledger: [
       {
-        component: 'Top Grating (14 battens)',
-        material: 'Salvaged oak offcuts, 18 × 22 mm',
-        method: 'Crossed half-lap joints, dry-fitted',
-        lifecycle: '100% offcut yield · Re-sandable',
+        component: 'Solid Tabletop (585 × 585 mm)',
+        material: 'Edge-glued reclaimed oak staves, 22 mm',
+        method: 'Floating wooden button cleats for movement',
+        lifecycle: 'High offcut yield · Re-planable for life',
       },
       {
         component: 'Corner Posts & Rails',
@@ -263,7 +263,7 @@ export const PROJECT = {
     eyebrow: '04 · Workshop Log',
     heading: 'From rough timber to kinetic geometry.',
     intro:
-      'Documenting each stage at the bench—from sorting reclaimed boards and cutting half-lap battens to tuning the four sliding trays by hand plane.',
+      'Documenting each stage at the bench—from selecting reclaimed boards and glue-matching the solid tabletop to tuning the four sliding trays by hand plane.',
     stages: [
       {
         step: '01',
@@ -272,11 +272,11 @@ export const PROJECT = {
         hours: '06 hrs',
         tolerance: 'MC 8.5%',
         summary:
-          'Selected reclaimed European oak boards for the four structural corner posts and sorted narrow straight-grained offcuts from the school timber rack for the top lattice.',
+          'Selected reclaimed European oak boards for the four structural corner posts and color-matched narrow workshop staves from the school timber rack for the solid tabletop.',
         notes: [
           'Moisture content stabilized in the shop for 14 days prior to rough milling.',
           'Grain-matched four corner posts from a single quarter-sawn billet to prevent seasonal twist.',
-          'Sorted 22 offcut strips; retained the 14 straightest lengths for the 7×7 top grid.',
+          'Alternated growth-ring orientation across five reclaimed oak staves to keep the solid top dead flat.',
         ],
       },
       {
@@ -295,16 +295,16 @@ export const PROJECT = {
       },
       {
         step: '03',
-        phase: 'Half-Lap Lattice Grating',
+        phase: 'Solid Wood Tabletop & Fitting',
         status: 'In Progress',
-        hours: '12 hrs',
+        hours: '10 hrs',
         tolerance: '±0.1 mm',
         summary:
-          'Cutting interlocking half-lap notches across 14 narrow hardwood battens to form the signature architectural grid inspired by Japanese kumiko work.',
+          'Jointing, edge-gluing, and hand-planing the 22 mm solid hardwood tabletop so it sits cleanly flush with the four corner posts while allowing seasonal timber movement.',
         notes: [
-          'Used a dedicated sled stop-block to guarantee identical square apertures across the entire top.',
-          'Hand-pared notch shoulders with a 12 mm paring chisel for crisp zero-gap intersections.',
-          'Top grating seats flush inside a rabbeted perimeter frame and lifts out cleanly for dusting or re-oiling.',
+          'Jointed stave edges on the shooting board for seamless, invisible glue lines.',
+          'Attached top to the upper rails with slotted hardwood cleats so the panel breathes across seasons.',
+          'Planed top surface with a finely set smoothing plane and eased the perimeter arris to 0.8 mm.',
         ],
       },
       {
@@ -350,9 +350,9 @@ export const PROJECT = {
       { label: 'Maximum Open Span', value: '1170 × 1170 × 310 mm' },
       { label: 'Individual Tray Module', value: '535 × 485 × 25 mm (× 4 Reversible)' },
       { label: 'Active Surface Expansion', value: '0.34 m² → 0.97 m² (2.8× usable area)' },
-      { label: 'Primary Timber', value: 'Reclaimed European Oak + Offcut Battens' },
+      { label: 'Tabletop & Structure', value: 'Solid Reclaimed European Oak (22 mm Top)' },
       { label: 'Tray Inlay Material', value: 'Dual-faced Matte Furniture Linoleum' },
-      { label: 'Joinery System', value: 'Mortise & Tenon · Half-Lap · Box-Jointed Trays' },
+      { label: 'Joinery System', value: 'Mortise & Tenon · Cleated Solid Top · Box-Jointed Trays' },
       { label: 'Mechanical Hardware', value: 'None — 100% waxed solid-wood runners' },
       { label: 'Finish & Emissions', value: 'Cold-pressed Linseed Oil & Beeswax (0 g/L VOC)' },
       { label: 'End-of-Life Path', value: 'Mechanically repairable, refinishable, separable' },

@@ -33,18 +33,9 @@ export function renderElevationDiagram() {
       <rect x="174" y="106" width="16" height="140" fill="#E3DDD2" stroke="#1F1C18" stroke-width="1.4"/>
       <rect x="350" y="106" width="16" height="140" fill="#E3DDD2" stroke="#1F1C18" stroke-width="1.4"/>
 
-      <!-- Top Lattice Grating Profile (22 mm thick) -->
+      <!-- Solid Wood Tabletop Profile (22 mm thick) -->
       <rect x="174" y="106" width="192" height="18" fill="#D8CEBE" stroke="#1F1C18" stroke-width="1.4"/>
-      <!-- Grating cross-batten end grain indications -->
-      <g fill="#1F1C18" fill-opacity="0.18">
-        <rect x="198" y="107" width="6" height="16"/>
-        <rect x="220" y="107" width="6" height="16"/>
-        <rect x="242" y="107" width="6" height="16"/>
-        <rect x="264" y="107" width="6" height="16"/>
-        <rect x="286" y="107" width="6" height="16"/>
-        <rect x="308" y="107" width="6" height="16"/>
-        <rect x="330" y="107" width="6" height="16"/>
-      </g>
+      <line x1="175" y1="115" x2="365" y2="115" stroke="#1F1C18" stroke-opacity="0.16" stroke-width="0.9"/>
 
       <!-- Four Staggered Internal Tray Slots (25 mm modules on wooden runners) -->
       <g stroke="#1F1C18" stroke-width="1.15">
@@ -92,7 +83,7 @@ export function renderElevationDiagram() {
       <g font-family="'IBM Plex Mono', monospace" font-size="9" fill="#867E74">
         <text x="64" y="182" letter-spacing="0.08em">REVERSIBLE TRAY</text>
         <text x="64" y="194" letter-spacing="0.08em">25 MM MODULE</text>
-        <text x="174" y="92" letter-spacing="0.08em">SOLID WOOD GRATING</text>
+        <text x="174" y="92" letter-spacing="0.08em">SOLID WOOD TOP</text>
       </g>
     </svg>
   `;

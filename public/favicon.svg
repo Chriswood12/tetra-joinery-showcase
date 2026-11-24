@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <rect width="64" height="64" rx="8" fill="#1D1A17"/>
-  <rect x="10" y="10" width="44" height="44" stroke="#D8C8B0" stroke-width="3.2"/>
-  <line x1="24.67" y1="10" x2="24.67" y2="54" stroke="#B5946B" stroke-width="2.4"/>
-  <line x1="39.33" y1="10" x2="39.33" y2="54" stroke="#B5946B" stroke-width="2.4"/>
-  <line x1="10" y1="24.67" x2="54" y2="24.67" stroke="#B5946B" stroke-width="2.4"/>
-  <line x1="10" y1="39.33" x2="54" y2="39.33" stroke="#B5946B" stroke-width="2.4"/>
+  <!-- Four sliding tray extensions in subtle bronze -->
+  <rect x="20" y="8" width="24" height="10" stroke="#B5946B" stroke-width="2"/>
+  <rect x="20" y="46" width="24" height="10" stroke="#B5946B" stroke-width="2"/>
+  <rect x="8" y="20" width="10" height="24" stroke="#B5946B" stroke-width="2"/>
+  <rect x="46" y="20" width="10" height="24" stroke="#B5946B" stroke-width="2"/>
+  <!-- Central solid tabletop square -->
+  <rect x="18" y="18" width="28" height="28" fill="#D8C8B0" stroke="#1D1A17" stroke-width="2"/>
 </svg>

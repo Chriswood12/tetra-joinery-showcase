@@ -149,9 +149,9 @@ export function mountKineticStudio(rootEl, finishes) {
             ${TRAY_META.map((t) => renderTrayGroup(t)).join('')}
           </g>
 
-          <!-- Top Layer: Solid Wood Perimeter Frame + 7×7 Checkered Lattice Grating -->
-          <g id="tetra-top-lattice" style="pointer-events: none;">
-            ${renderLatticeTop()}
+          <!-- Top Layer: Solid Wood Tabletop & Corner Posts -->
+          <g id="tetra-top-solid" style="pointer-events: none;">
+            ${renderSolidTop()}
           </g>
         </svg>
       </div>
@@ -383,62 +383,73 @@ export function mountKineticStudio(rootEl, finishes) {
     `;
   }
 
-  function renderLatticeTop() {
-    const outerRim = 13;
-    const innerOrigin = ORIGIN + outerRim;
-    const innerSpan = BASE_PX - outerRim * 2; // 190
-    const cells = 7; // Authentic 7x7 square checkered grating
-    const batten = 7.5;
-    const step = innerSpan / cells;
+  function renderSolidTop() {
+    const chamfer = 9;
+    const staves = 5;
+    const staveHeight = BASE_PX / staves;
+    let staveSeams = '';
 
-    let bars = '';
-    // Vertical battens (6 internal)
-    for (let i = 1; i < cells; i++) {
-      const bx = innerOrigin + step * i - batten / 2;
-      bars += `<rect class="lattice-wood-fill" x="${bx.toFixed(1)}" y="${innerOrigin}" width="${batten}" height="${innerSpan}" />`;
-    }
-    // Horizontal battens (6 internal)
-    for (let i = 1; i < cells; i++) {
-      const by = innerOrigin + step * i - batten / 2;
-      bars += `<rect class="lattice-wood-fill" x="${innerOrigin}" y="${by.toFixed(1)}" width="${innerSpan}" height="${batten}" />`;
+    for (let i = 1; i < staves; i++) {
+      const sy = ORIGIN + staveHeight * i;
+      staveSeams += `<line x1="${ORIGIN + 2}" y1="${sy.toFixed(1)}" x2="${ORIGIN + BASE_PX - 2}" y2="${sy.toFixed(1)}" stroke="rgba(0,0,0,0.14)" stroke-width="0.9" />`;
     }
 
-    // Corner post caps (square solid wood legs meeting top rails)
-    const post = 18;
-    const corners = [
-      [ORIGIN, ORIGIN],
-      [ORIGIN + BASE_PX - post, ORIGIN],
-      [ORIGIN, ORIGIN + BASE_PX - post],
-      [ORIGIN + BASE_PX - post, ORIGIN + BASE_PX - post],
-    ];
+    // Subtle fine grain whisper lines along each solid timber stave
+    const grainOffsets = [0.28, 0.64];
+    let grainLines = '';
+    for (let s = 0; s < staves; s++) {
+      grainOffsets.forEach((off, idx) => {
+        const gy = ORIGIN + staveHeight * (s + off);
+        const padL = idx === 0 ? 18 : 34;
+        const padR = idx === 0 ? 32 : 16;
+        grainLines += `<line x1="${ORIGIN + padL}" y1="${gy.toFixed(1)}" x2="${ORIGIN + BASE_PX - padR}" y2="${gy.toFixed(1)}" stroke="rgba(255,255,255,0.09)" stroke-width="0.7" />`;
+      });
+    }
 
     return `
-      <!-- Outer perimeter rails (hollow center so trays show cleanly through lattice!) -->
-      <path
-        class="lattice-wood-fill"
-        fill-rule="evenodd"
-        d="M ${ORIGIN} ${ORIGIN} H ${ORIGIN + BASE_PX} V ${ORIGIN + BASE_PX} H ${ORIGIN} Z
-           M ${innerOrigin} ${innerOrigin} V ${innerOrigin + innerSpan} H ${innerOrigin + innerSpan} V ${innerOrigin} Z"
-        stroke-width="1"
+      <!-- Continuous Solid Wood Tabletop (585 × 585 mm) -->
+      <rect
+        class="top-wood-fill"
+        x="${ORIGIN}"
+        y="${ORIGIN}"
+        width="${BASE_PX}"
+        height="${BASE_PX}"
+        rx="1.5"
+        stroke-width="1.2"
+        filter="url(#trayShadow)"
       />
-      <!-- Interlocking half-lap grating battens -->
-      <g class="lattice-bars">
-        ${bars}
-      </g>
-      <!-- Four solid corner leg post caps -->
-      ${corners
-        .map(
-          ([cx, cy]) => `
-        <rect
-          class="lattice-wood-fill"
-          x="${cx}"
-          y="${cy}"
-          width="${post}"
-          height="${post}"
-          stroke-width="1"
-        />`
-        )
-        .join('')}
+      <!-- Book-matched edge-glued timber stave seams -->
+      <g>${staveSeams}</g>
+      <g>${grainLines}</g>
+      <!-- Subtle perimeter chamfer highlight -->
+      <rect
+        x="${ORIGIN + chamfer}"
+        y="${ORIGIN + chamfer}"
+        width="${BASE_PX - chamfer * 2}"
+        height="${BASE_PX - chamfer * 2}"
+        fill="none"
+        stroke="rgba(255,255,255,0.14)"
+        stroke-width="0.8"
+      />
+      <!-- Architectural center stamp -->
+      <text
+        x="${CENTER}"
+        y="${CENTER - 4}"
+        text-anchor="middle"
+        font-family="'IBM Plex Mono', monospace"
+        font-size="8.5"
+        letter-spacing="0.16em"
+        fill="rgba(255,255,255,0.58)"
+      >SOLID WOOD TOP</text>
+      <text
+        x="${CENTER}"
+        y="${CENTER + 11}"
+        text-anchor="middle"
+        font-family="'IBM Plex Mono', monospace"
+        font-size="7.5"
+        letter-spacing="0.14em"
+        fill="rgba(255,255,255,0.42)"
+      >585 × 585 MM</text>
     `;
   }
 
@@ -447,8 +458,8 @@ export function mountKineticStudio(rootEl, finishes) {
     const wood = getWood();
     const inlay = getInlay();
 
-    // Update wood tones across lattice & tray borders
-    rootEl.querySelectorAll('.lattice-wood-fill').forEach((el) => {
+    // Update wood tones across solid tabletop & tray borders
+    rootEl.querySelectorAll('.top-wood-fill').forEach((el) => {
       el.setAttribute('fill', wood.grain);
       el.setAttribute('stroke', wood.grainStroke);
     });

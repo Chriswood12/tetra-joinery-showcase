@@ -5,7 +5,7 @@ A modern, gallery-grade showcase website built for a joinery school furniture pr
 ## Highlights
 
 - **Interactive Kinetic Plan & Material Studio**: Orthographic top-down SVG blueprint of Tetra's 4 independent sliding, reversible trays (`585 × 585 mm` → `1170 × 1170 mm`), live area telemetry, flush/serving-tray reversal, and wood/linoleum finish previews.
-- **Quiet Permanence (Reduce · Reuse · Recycle)**: Integrated with cabinetmaking restraint—reclaimed hardwood stock, offcut slatted top grating, all-wood sliding runners (zero steel slides), and zero-VOC cold-pressed oil.
+- **Quiet Permanence (Reduce · Reuse · Recycle)**: Integrated with cabinetmaking restraint—reclaimed hardwood stock, edge-glued offcut solid tabletop, all-wood sliding runners (zero steel slides), and zero-VOC cold-pressed oil.
 - **Editable Workshop Build Log & Material Ledger**: Update school info, maker credits, timber notes, and build milestones from a single file (`src/data/project.js`).
 - **Museum-Grade Gallery & Technical Drawings**: High-resolution studio photography with accessible lightbox inspection and an architectural elevation diagram.
 

@@ -785,7 +785,7 @@ input {
 
 .tray-surface-fill,
 .tray-frame-fill,
-.lattice-wood-fill {
+.top-wood-fill {
   transition: fill 360ms var(--ease-subtle), stroke 360ms var(--ease-subtle);
 }
 
