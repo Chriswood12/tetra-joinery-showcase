@@ -5,9 +5,10 @@
  * Update school details, maker credits, timber provenance, build log entries,
  * and photo captions here as your physical piece progresses.
  *
- * To replace the studio/workshop images with your own photographs:
- * Drop your photos into `public/images/` keeping the same filenames
- * (or update the paths below).
+ * To insert your own workshop & finished photographs:
+ * 1. Drop your photos into `public/images/` (JPG, WebP, or PNG).
+ * 2. Set the `src` field below (e.g. `src: './images/tetra-hero.jpg'`).
+ *    Leave `src: ''` to display the architectural exhibition placeholder.
  */
 
 export const PROJECT = {
@@ -30,9 +31,13 @@ export const PROJECT = {
     subtitle:
       'A kinetic low table in reclaimed hardwood and natural linoleum — faithfully studied from Sculptures Jeux and built for quiet permanence.',
     image: {
-      webp: './images/tetra-hero.webp',
-      jpg: './images/tetra-hero.jpg',
-      alt: 'Tetra modular low coffee table crafted in oiled oak with checkered solid wood grating top and four sliding reversible trays extended outward',
+      // Drop your hero photo in public/images/ and set src: './images/tetra-hero.jpg'
+      src: '',
+      expectedFile: 'public/images/tetra-hero.jpg',
+      aspect: '16:9',
+      plateCode: 'PLATE 01',
+      placeholderTitle: 'Extended Pinwheel View',
+      alt: 'Tetra modular low coffee table in extended configuration',
       caption:
         'FIG. 01 — EXTENDED PINWHEEL CONFIGURATION · 1170 × 1170 × 310 MM · RECLAIMED OAK & MATTE LINOLEUM',
     },
@@ -47,24 +52,32 @@ export const PROJECT = {
       {
         id: 'plate-closed',
         figure: 'FIG. 02',
+        plateCode: 'PLATE 02',
+        aspect: '4:3',
         title: 'The Compact Cube',
         meta: '585 × 585 × 310 MM · CLOSED STATE',
         caption:
           'When closed, the four stacked trays disappear cleanly inside the mitered corner posts, leaving a calm square aperture grid over the top inlay.',
-        webp: './images/tetra-closed.webp',
-        jpg: './images/tetra-closed.jpg',
-        alt: 'Tetra coffee table completely closed into a 58.5 cm square solid wood cube showing the precision checkered lattice top',
+        // Drop your photo in public/images/ and set src: './images/tetra-closed.jpg'
+        src: '',
+        expectedFile: 'public/images/tetra-closed.jpg',
+        placeholderTitle: 'Closed Cube Study',
+        alt: 'Tetra coffee table closed into a 58.5 cm square solid wood cube showing the checkered lattice top',
       },
       {
         id: 'plate-tray',
         figure: 'FIG. 03',
+        plateCode: 'PLATE 03',
+        aspect: '4:3',
         title: 'Reversible Tray Geometry',
         meta: 'FLUSH SURFACE / RECESSED TRAY',
         caption:
           'Turn any shelf over and its solid-wood perimeter frame rises to form a shallow lip—transforming an extension leaf into a self-contained serving tray.',
-        webp: './images/tetra-tray.webp',
-        jpg: './images/tetra-tray.jpg',
-        alt: 'Close-up of a finger-jointed solid oak reversible tray flipped into serving mode with a matte sage surface and ceramic espresso cup',
+        // Drop your photo in public/images/ and set src: './images/tetra-tray.jpg'
+        src: '',
+        expectedFile: 'public/images/tetra-tray.jpg',
+        placeholderTitle: 'Reversible Tray & Corner Detail',
+        alt: 'Close-up of a solid wood reversible tray flipped into serving mode',
       },
     ],
   },
@@ -199,9 +212,13 @@ export const PROJECT = {
       },
     ],
     workshopPhoto: {
-      webp: './images/tetra-craft.webp',
-      jpg: './images/tetra-craft.jpg',
-      alt: 'Cabinetmaker hand-fitting half-lap oak offcut battens into the Tetra checkered grating on a sunlit joinery workbench beside hand plane and brass-backed saw',
+      // Drop your bench photo in public/images/ and set src: './images/tetra-craft.jpg'
+      src: '',
+      expectedFile: 'public/images/tetra-craft.jpg',
+      aspect: '4:3',
+      plateCode: 'PLATE 04',
+      placeholderTitle: 'Workbench & Joinery Study',
+      alt: 'Joinery workbench assembly of half-lap battens and hand tools',
       caption: 'FIG. 04 — HALF-LAP LATTICE DRY FIT · RECLAIMED WORKSHOP OFFCUTS',
     },
     ledger: [

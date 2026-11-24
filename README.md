@@ -29,12 +29,8 @@ npm run preview
 
 ## Customizing for Your Build
 
-1. **Edit Project Copy, Makers & Build Progress**: Open [`src/data/project.js`](./src/data/project.js) and update your school name, maker credits, wood species, ledger entries, and journal stage statuses (`Completed`, `In Progress`, `Scheduled`).
-2. **Swap in Your Own Workshop Photographs**: Replace the files inside `public/images/`:
-   - `tetra-hero.webp` / `tetra-hero.jpg` (16:9 hero photograph)
-   - `tetra-closed.webp` / `tetra-closed.jpg` (4:3 closed cube study)
-   - `tetra-tray.webp` / `tetra-tray.jpg` (4:3 reversible tray detail)
-   - `tetra-craft.webp` / `tetra-craft.jpg` (4:3 workbench joinery photo)
+1. **Insert Your Own Photographs**: Drop your workshop and finished piece photos into `public/images/` (`tetra-hero.jpg`, `tetra-closed.jpg`, `tetra-tray.jpg`, `tetra-craft.jpg`) and set the `src` path for each slot in [`src/data/project.js`](./src/data/project.js) (e.g., `src: './images/tetra-hero.jpg'`). Leaving `src: ''` displays clean architectural placeholders.
+2. **Edit Project Copy, Makers & Build Progress**: Open [`src/data/project.js`](./src/data/project.js) and update your school name, maker credits, wood species, ledger entries, and journal stage statuses (`Completed`, `In Progress`, `Scheduled`).
 
 ---
 

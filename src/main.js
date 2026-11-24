@@ -7,13 +7,52 @@ import { initLightbox } from './components/lightbox.js';
 
 const app = document.querySelector('#app');
 
-function renderPicture({ webp, jpg, alt, loading = 'lazy', fetchPriority }) {
-  const priorityAttr = fetchPriority ? `fetchpriority="${fetchPriority}"` : '';
+function renderPhotoFrame({
+  src,
+  alt,
+  caption,
+  expectedFile,
+  aspect = '4:3',
+  plateCode = 'PLATE',
+  placeholderTitle = 'Photograph Forthcoming',
+  loading = 'lazy',
+  fetchPriority,
+  ariaLabel,
+}) {
+  const ratioClass = aspect === '16:9' ? 'figure-frame--wide' : 'figure-frame--plate';
+
+  if (src) {
+    const priorityAttr = fetchPriority ? `fetchpriority="${fetchPriority}"` : '';
+    return `
+      <div
+        class="figure-frame ${ratioClass}"
+        role="button"
+        tabindex="0"
+        aria-label="${ariaLabel || `Enlarge ${alt}`}"
+        data-lightbox-src="${src}"
+        data-lightbox-alt="${alt}"
+        data-lightbox-caption="${caption || ''}"
+      >
+        <img src="${src}" alt="${alt}" loading="${loading}" decoding="async" ${priorityAttr} />
+      </div>
+    `;
+  }
+
   return `
-    <picture>
-      <source srcset="${webp}" type="image/webp" />
-      <img src="${jpg}" alt="${alt}" loading="${loading}" decoding="async" ${priorityAttr} />
-    </picture>
+    <div class="figure-frame figure-frame--placeholder ${ratioClass}" role="img" aria-label="Photo placeholder for ${placeholderTitle}">
+      <div class="photo-placeholder">
+        <span class="crop-mark crop-mark--tl" aria-hidden="true"></span>
+        <span class="crop-mark crop-mark--tr" aria-hidden="true"></span>
+        <span class="crop-mark crop-mark--bl" aria-hidden="true"></span>
+        <span class="crop-mark crop-mark--br" aria-hidden="true"></span>
+
+        <div class="placeholder-inner">
+          <span class="placeholder-code">${plateCode} · ${aspect.replace(':', ' : ')}</span>
+          <span class="placeholder-title">${placeholderTitle}</span>
+          <span class="placeholder-path">${expectedFile}</span>
+        </div>
+      </div>
+    </div>
   `;
 }
 
@@ -89,20 +128,15 @@ function renderApp() {
           </div>
 
           <figure class="hero-figure reveal is-visible">
-            <div
-              class="figure-frame"
-              role="button"
-              tabindex="0"
-              aria-label="Enlarge hero photograph of the Tetra coffee table"
-              data-lightbox-src="${hero.image.jpg}"
-              data-lightbox-alt="${hero.image.alt}"
-              data-lightbox-caption="${hero.image.caption}"
-            >
-              ${renderPicture({ ...hero.image, loading: 'eager', fetchPriority: 'high' })}
-            </div>
+            ${renderPhotoFrame({
+              ...hero.image,
+              loading: 'eager',
+              fetchPriority: 'high',
+              ariaLabel: 'Enlarge hero photograph of the Tetra coffee table',
+            })}
             <figcaption class="figure-caption-bar">
               <span>${hero.image.caption}</span>
-              <span>CLICK PLATE TO INSPECT</span>
+              <span>${hero.image.src ? 'CLICK PLATE TO INSPECT' : 'PHOTOGRAPH SLOT · READY'}</span>
             </figcaption>
           </figure>
 
@@ -152,17 +186,11 @@ function renderApp() {
               .map(
                 (plate) => `
               <article class="plate-card reveal" id="${plate.id}">
-                <div
-                  class="figure-frame"
-                  role="button"
-                  tabindex="0"
-                  aria-label="Enlarge ${plate.title} photograph"
-                  data-lightbox-src="${plate.jpg}"
-                  data-lightbox-alt="${plate.alt}"
-                  data-lightbox-caption="${plate.figure} — ${plate.title.toUpperCase()} · ${plate.meta}"
-                >
-                  ${renderPicture(plate)}
-                </div>
+                ${renderPhotoFrame({
+                  ...plate,
+                  caption: `${plate.figure} — ${plate.title.toUpperCase()} · ${plate.meta}`,
+                  ariaLabel: `Enlarge ${plate.title} photograph`,
+                })}
                 <div class="plate-meta">
                   <span>${plate.figure}</span>
                   <span>${plate.meta}</span>
@@ -225,17 +253,10 @@ function renderApp() {
 
           <div class="provenance-grid reveal">
             <figure class="provenance-photo">
-              <div
-                class="figure-frame"
-                role="button"
-                tabindex="0"
-                aria-label="Enlarge joinery workbench photograph"
-                data-lightbox-src="${circularCraft.workshopPhoto.jpg}"
-                data-lightbox-alt="${circularCraft.workshopPhoto.alt}"
-                data-lightbox-caption="${circularCraft.workshopPhoto.caption}"
-              >
-                ${renderPicture(circularCraft.workshopPhoto)}
-              </div>
+              ${renderPhotoFrame({
+                ...circularCraft.workshopPhoto,
+                ariaLabel: 'Enlarge joinery workbench photograph',
+              })}
               <figcaption class="provenance-photo-caption">
                 ${circularCraft.workshopPhoto.caption}
               </figcaption>
