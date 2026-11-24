@@ -1,0 +1,76 @@
+/* ==========================================================================
+   TETRA — Design System Tokens
+   Warm Architectural Gallery Palette · Tactile Typography · Spatial Rhythm
+   ========================================================================== */
+
+:root {
+  /* Palette — Light Architectural Surfaces (HSL curated) */
+  --surface-canvas: hsl(40, 29%, 95%);       /* Warm Alabaster Limestone #F5F2EC */
+  --surface-elevated: hsl(38, 28%, 91%);     /* Pale Travertine #EDE7DD */
+  --surface-paper: hsl(40, 33%, 97%);        /* Crisp Gallery White #F9F7F3 */
+  --surface-subtle: hsl(37, 22%, 86%);       /* Raw Linen #E3DDD2 */
+
+  /* Palette — Deep Contrast Surfaces (Kinetic Studio & Colophon) */
+  --surface-dark: hsl(28, 12%, 10%);         /* Smoked Walnut Charcoal #1D1A17 */
+  --surface-dark-raised: hsl(28, 11%, 14%);  /* Warm Espresso Panel #27231F */
+  --surface-dark-inset: hsl(28, 13%, 8%);    /* Deep Studio Backdrop #171412 */
+
+  /* Typography Ink */
+  --ink-primary: hsl(30, 12%, 11%);          /* Deep Timber Ink #1F1C18 */
+  --ink-secondary: hsl(32, 9%, 34%);         /* Warm Bark Slate #5E574E */
+  --ink-muted: hsl(32, 8%, 49%);             /* Aged Stone #867E74 */
+
+  --ink-light: hsl(38, 30%, 93%);            /* Warm Ivory #F2EDE4 */
+  --ink-light-secondary: hsl(36, 15%, 71%);  /* Soft Parchment #BFB7AA */
+  --ink-light-muted: hsl(34, 10%, 54%);      /* Muted Ash #958D82 */
+
+  /* Material Accents (restrained, earthy, never saturated) */
+  --accent-oak: hsl(30, 44%, 43%);           /* Oiled Oak / Iroko #9E6E3D */
+  --accent-bronze: hsl(33, 33%, 57%);        /* Brushed Brass / Bronze #B5946B */
+  --accent-sage: hsl(105, 8%, 45%);          /* Quiet Sage Linoleum #6F7B6A */
+
+  /* Mineral Hairlines */
+  --rule-light: hsla(30, 12%, 11%, 0.12);
+  --rule-light-strong: hsla(30, 12%, 11%, 0.24);
+  --rule-dark: hsla(38, 30%, 93%, 0.12);
+  --rule-dark-strong: hsla(38, 30%, 93%, 0.26);
+
+  /* Typography Families */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Fluid Type Scale */
+  --text-xs: 0.72rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.15rem;
+  --text-xl: clamp(1.35rem, 1.8vw, 1.65rem);
+  --text-2xl: clamp(1.9rem, 3vw, 2.75rem);
+  --text-3xl: clamp(2.4rem, 4.2vw, 3.75rem);
+  --text-hero: clamp(3.6rem, 8.2vw, 6.75rem);
+
+  /* Layout & Spacing */
+  --container-max: 1320px;
+  --container-narrow: 980px;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --section-space: clamp(5rem, 10vw, 9.5rem);
+  --header-height: 76px;
+
+  /* Radii — Architectural Precision */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+
+  /* Tactile Shadows */
+  --shadow-plate: 0 22px 54px -26px hsla(28, 25%, 10%, 0.28),
+                  0 4px 12px -4px hsla(28, 25%, 10%, 0.08);
+  --shadow-dark-panel: 0 28px 60px -24px hsla(0, 0%, 0%, 0.55);
+
+  /* Motion */
+  --ease-architectural: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-subtle: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 180ms;
+  --duration-base: 380ms;
+  --duration-slow: 720ms;
+}
